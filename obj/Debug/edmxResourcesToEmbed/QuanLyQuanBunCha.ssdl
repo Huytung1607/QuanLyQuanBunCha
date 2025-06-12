@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanLyQuanBunChaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="dangky">
+    <Key>
+      <PropertyRef Name="mataikhoan" />
+    </Key>
+    <Property Name="mataikhoan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tentaikhoan" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="tendangnhap" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="sodienthoai" Type="varchar" MaxLength="20" />
+    <Property Name="diachi" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="dangnhap">
+    <Key>
+      <PropertyRef Name="tendangnhap" />
+    </Key>
+    <Property Name="tendangnhap" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="donhang">
+    <Key>
+      <PropertyRef Name="madonhang" />
+    </Key>
+    <Property Name="madonhang" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="makhachhang" Type="varchar" MaxLength="20" />
+    <Property Name="manhanvien" Type="varchar" MaxLength="20" />
+    <Property Name="ngaytao" Type="date" />
+    <Property Name="tonggiatri" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="trangthai" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="khachhang">
+    <Key>
+      <PropertyRef Name="makhachhang" />
+    </Key>
+    <Property Name="makhachhang" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="tenkhachhang" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="sodienthoai" Type="varchar" MaxLength="20" />
+    <Property Name="diachi" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="khohang">
+    <Key>
+      <PropertyRef Name="makho" />
+    </Key>
+    <Property Name="makho" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="manhanvien" Type="varchar" MaxLength="20" />
+    <Property Name="nhacungcap" Type="nvarchar" MaxLength="100" />
+    <Property Name="tennguyenlieu" Type="nvarchar" MaxLength="100" />
+    <Property Name="soluong" Type="int" />
+  </EntityType>
+  <EntityType Name="nhanvien">
+    <Key>
+      <PropertyRef Name="manhanvien" />
+    </Key>
+    <Property Name="manhanvien" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="tennhanvien" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="vitrilamviec" Type="nvarchar" MaxLength="50" />
+    <Property Name="sodienthoai" Type="varchar" MaxLength="20" />
+    <Property Name="diachi" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="thanhtoan">
+    <Key>
+      <PropertyRef Name="mathanhtoan" />
+    </Key>
+    <Property Name="mathanhtoan" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="madonhang" Type="varchar" MaxLength="20" />
+    <Property Name="ngaythanhtoan" Type="date" />
+    <Property Name="phuongthucthanhtoan" Type="nvarchar" MaxLength="50" />
+    <Property Name="sotien" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <Association Name="fk_dangky_dangnhap">
+    <End Role="dangnhap" Type="Self.dangnhap" Multiplicity="0..1" />
+    <End Role="dangky" Type="Self.dangky" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dangnhap">
+        <PropertyRef Name="tendangnhap" />
+      </Principal>
+      <Dependent Role="dangky">
+        <PropertyRef Name="tendangnhap" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_donhang_khachhang">
+    <End Role="khachhang" Type="Self.khachhang" Multiplicity="0..1" />
+    <End Role="donhang" Type="Self.donhang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="khachhang">
+        <PropertyRef Name="makhachhang" />
+      </Principal>
+      <Dependent Role="donhang">
+        <PropertyRef Name="makhachhang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_donhang_nhanvien">
+    <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="0..1" />
+    <End Role="donhang" Type="Self.donhang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="nhanvien">
+        <PropertyRef Name="manhanvien" />
+      </Principal>
+      <Dependent Role="donhang">
+        <PropertyRef Name="manhanvien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_khohang_nhanvien">
+    <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="0..1" />
+    <End Role="khohang" Type="Self.khohang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="nhanvien">
+        <PropertyRef Name="manhanvien" />
+      </Principal>
+      <Dependent Role="khohang">
+        <PropertyRef Name="manhanvien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_thanhtoan_donhang">
+    <End Role="donhang" Type="Self.donhang" Multiplicity="0..1" />
+    <End Role="thanhtoan" Type="Self.thanhtoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="donhang">
+        <PropertyRef Name="madonhang" />
+      </Principal>
+      <Dependent Role="thanhtoan">
+        <PropertyRef Name="madonhang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QuanLyQuanBunChaModelStoreContainer">
+    <EntitySet Name="dangky" EntityType="Self.dangky" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dangnhap" EntityType="Self.dangnhap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="donhang" EntityType="Self.donhang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="khachhang" EntityType="Self.khachhang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="khohang" EntityType="Self.khohang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="nhanvien" EntityType="Self.nhanvien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="thanhtoan" EntityType="Self.thanhtoan" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_dangky_dangnhap" Association="Self.fk_dangky_dangnhap">
+      <End Role="dangnhap" EntitySet="dangnhap" />
+      <End Role="dangky" EntitySet="dangky" />
+    </AssociationSet>
+    <AssociationSet Name="fk_donhang_khachhang" Association="Self.fk_donhang_khachhang">
+      <End Role="khachhang" EntitySet="khachhang" />
+      <End Role="donhang" EntitySet="donhang" />
+    </AssociationSet>
+    <AssociationSet Name="fk_donhang_nhanvien" Association="Self.fk_donhang_nhanvien">
+      <End Role="nhanvien" EntitySet="nhanvien" />
+      <End Role="donhang" EntitySet="donhang" />
+    </AssociationSet>
+    <AssociationSet Name="fk_khohang_nhanvien" Association="Self.fk_khohang_nhanvien">
+      <End Role="nhanvien" EntitySet="nhanvien" />
+      <End Role="khohang" EntitySet="khohang" />
+    </AssociationSet>
+    <AssociationSet Name="fk_thanhtoan_donhang" Association="Self.fk_thanhtoan_donhang">
+      <End Role="donhang" EntitySet="donhang" />
+      <End Role="thanhtoan" EntitySet="thanhtoan" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

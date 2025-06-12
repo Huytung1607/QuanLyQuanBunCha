@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d5c2344ade204488b6a2804503b632e1" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLyQuanBunChaModel.dangky" Width="1.5" PointX="8" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanBunChaModel.dangnhap" Width="1.5" PointX="5.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanBunChaModel.donhang" Width="1.5" PointX="3.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanBunChaModel.khachhang" Width="1.5" PointX="1.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanBunChaModel.khohang" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanBunChaModel.nhanvien" Width="1.5" PointX="0.625" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanBunChaModel.sysdiagram" Width="1.5" PointX="8.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanBunChaModel.thanhtoan" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyQuanBunChaModel.fk_dangky_dangnhap" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanBunChaModel.fk_donhang_khachhang" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanBunChaModel.fk_donhang_nhanvien" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanBunChaModel.fk_thanhtoan_donhang" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanBunChaModel.fk_khohang_nhanvien" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

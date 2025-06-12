@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{16FA2937-E815-4409-AFF3-928B4363A7DD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QuanLyQuanBunCha</RootNamespace>
+    <AssemblyName>QuanLyQuanBunCha</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dangky.cs">
+      <DependentUpon>QuanLyQuanBunCha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dangnhap.cs">
+      <DependentUpon>QuanLyQuanBunCha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DangNhapDAL.cs" />
+    <Compile Include="donhang.cs">
+      <DependentUpon>QuanLyQuanBunCha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FormDangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDangKy.Designer.cs">
+      <DependentUpon>FormDangKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDangNhap.Designer.cs">
+      <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDonHang.Designer.cs">
+      <DependentUpon>FormDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKhachHang.Designer.cs">
+      <DependentUpon>FormKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKhoHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKhoHang.Designer.cs">
+      <DependentUpon>FormKhoHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNhanVien.Designer.cs">
+      <DependentUpon>FormNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThanhToan.Designer.cs">
+      <DependentUpon>FormThanhToan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTimKiemDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTimKiemDonHang.Designer.cs">
+      <DependentUpon>FormTimKiemDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTimKiemKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTimKiemKhachHang.Designer.cs">
+      <DependentUpon>FormTimKiemKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTimKiemKhoHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTimKiemKhoHang.Designer.cs">
+      <DependentUpon>FormTimKiemKhoHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTimKiemNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTimKiemNhanVien.Designer.cs">
+      <DependentUpon>FormTimKiemNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTimKiemThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTimKiemThanhToan.Designer.cs">
+      <DependentUpon>FormTimKiemThanhToan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTrangChu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTrangChu.Designer.cs">
+      <DependentUpon>FormTrangChu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="khachhang.cs">
+      <DependentUpon>QuanLyQuanBunCha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="khohang.cs">
+      <DependentUpon>QuanLyQuanBunCha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="nhanvien.cs">
+      <DependentUpon>QuanLyQuanBunCha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyQuanBunCha.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyQuanBunCha.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyQuanBunCha.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyQuanBunCha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyQuanBunCha.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyQuanBunCha.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>QuanLyQuanBunCha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="thanhtoan.cs">
+      <DependentUpon>QuanLyQuanBunCha.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormDangKy.resx">
+      <DependentUpon>FormDangKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDangNhap.resx">
+      <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDonHang.resx">
+      <DependentUpon>FormDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKhachHang.resx">
+      <DependentUpon>FormKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKhoHang.resx">
+      <DependentUpon>FormKhoHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNhanVien.resx">
+      <DependentUpon>FormNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThanhToan.resx">
+      <DependentUpon>FormThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTimKiemDonHang.resx">
+      <DependentUpon>FormTimKiemDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTimKiemKhachHang.resx">
+      <DependentUpon>FormTimKiemKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTimKiemKhoHang.resx">
+      <DependentUpon>FormTimKiemKhoHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTimKiemNhanVien.resx">
+      <DependentUpon>FormTimKiemNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTimKiemThanhToan.resx">
+      <DependentUpon>FormTimKiemThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTrangChu.resx">
+      <DependentUpon>FormTrangChu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EntityDeploy Include="QuanLyQuanBunCha.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuanLyQuanBunCha.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="QuanLyQuanBunCha.edmx.diagram">
+      <DependentUpon>QuanLyQuanBunCha.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="QuanLyQuanBunCha.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLyQuanBunCha.edmx</DependentUpon>
+      <LastGenOutput>QuanLyQuanBunCha.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="QuanLyQuanBunCha.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLyQuanBunCha.edmx</DependentUpon>
+      <LastGenOutput>QuanLyQuanBunCha.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
